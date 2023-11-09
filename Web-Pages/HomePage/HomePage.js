@@ -101,7 +101,6 @@ const HomePage = () => {
       <section className="banner-wrapper">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-12">
               <div className="row justify-content-center align-items-center">
                 <div className="col-md-6" animate>
                   <h1 className="word">First impressions matter!</h1>
@@ -127,19 +126,16 @@ const HomePage = () => {
                     className="img-fluid"
                   ></img>
                 </div>
-              </div>
             </div>
           </div>
         </div>
         <div className="banner-img-1"></div>
         <div className="banner-img-2"></div>
-        
       </section>
 
       <section className="card-wrapper">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-10">
               <div className="row justify-content-center bg-box">
                 <div className="col-md-4">
                   <div className="card-box h-100 text-center">
@@ -184,7 +180,6 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </section>
