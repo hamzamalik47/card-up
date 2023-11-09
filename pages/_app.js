@@ -1,7 +1,5 @@
 import Head from "next/head";
-import "../styles/css/style.css";
-// import "../styles/fonts/stylesheet.css";
-// import "../styles/globals.css";
+import "../styles/css/style.scss";
 import { SnackbarProvider, useSnacar } from "notistack";
 import Script from "next/script";
 
@@ -34,6 +32,8 @@ function MyApp({ Component, pageProps }) {
         src="https://kit.fontawesome.com/e30259c958.js"
         crossOrigin="anonymous"
       />
+      <Script src="https://unpkg.com/split-type"></Script>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></Script>
     </SnackbarProvider>
   );
 }

@@ -1,12 +1,56 @@
 import { useEffect } from "react";
-import Background from "../../components/Background";
+import SplitType from 'split-type';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'ScrollTrigger';
+
 const HomePage = () => {
+
+  useEffect(() => {
+    const mainHeading = new SplitType('h1.word', { types: 'words' })
+    const words = mainHeading.words
+
+    gsap.fromTo(
+      words,
+      { 
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 2,
+        ease: 'power4.out',
+      }
+    )
+    const mainPara = new SplitType('p.word', { types: 'lines' })
+    const words2 = mainPara.lines
+
+    gsap.fromTo(
+      words2,
+      { 
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 2,
+        ease: 'power4.out',
+      }
+    )
+  }, []);
+
+
+
+
   return (
     <div>
-      <Background />
       <header>
-        <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container position-relative">
+          <nav className="navbar navbar-expand-lg navbar-light fixed-top">
             <div className="container-fluid">
               <a className="navbar-brand" href="#">
                 <img src="/images/logo.png" alt="" className="img-fluid"></img>
@@ -57,23 +101,26 @@ const HomePage = () => {
       <section className="banner-wrapper">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-10">
+            <div className="col-lg-12">
               <div className="row justify-content-center align-items-center">
-                <div className="col-md-7">
-                  <h1>First impressions matter!</h1>
-                  <p>
+                <div className="col-md-6" animate>
+                  <h1 className="word">First impressions matter!</h1>
+                  <p className="word">
                     Elevate your brand with our captivating blend of print and
                     digital introductions. Experience the perfect synergy of
                     elegance and technology
                   </p>
-                  <div className="mt-4">
-                    <a href="#" className="home-btn-btn">
-                      Get Started
-                      <i className="fa-solid fa-arrow-right ms-3"></i>
-                    </a>
-                  </div>
+                  <a href="javascript:;" class="btn">
+                    <span class="btn__circle"></span>
+                    <span class="btn__white-circle">
+                      <svg xmlns="http://www.w3.org/2000/svg" id="icon-arrow-right" viewBox="0 0 21 12">
+                        <path d="M17.104 5.072l-4.138-4.014L14.056 0l6 5.82-6 5.82-1.09-1.057 4.138-4.014H0V5.072h17.104z"></path>
+                      </svg>
+                    </span>
+                    <span class="btn__text">Discover the project</span>
+                  </a>
                 </div>
-                <div className="col-md-5 text-center">
+                <div className="col-md-6 text-center">
                   <img
                     src="/images/Mockup.png"
                     alt=""
@@ -84,6 +131,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        <div className="banner-img-1"></div>
+        <div className="banner-img-2"></div>
+        
       </section>
 
       <section className="card-wrapper">
